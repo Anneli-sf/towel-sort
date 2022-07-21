@@ -1,18 +1,9 @@
-module.exports = function towelSort (matrix) {
+module.exports = function towelSort (arr) {
     
-  let arr=[];
-  
-  if (matrix === undefined) { 
-      return arr;
-} else 
-  for (i=0; i< matrix.length; i++) {
-      for (j=0; j< matrix[i].length; j++) {
-        let row = i;
-        if (row % 2 === 0) 
-         row = j;
-         else row = (matrix[i].length-1-j); 
-          arr.push(matrix[i][row]);
-    }
-  }
-  return arr;
+    arr.map(function(item, i) {
+  if (i%2 !== 0) item.sort((a,b) => b-a)
+})
+    
+return arr.flat();
+    
 }
